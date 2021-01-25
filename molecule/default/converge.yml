@@ -1,0 +1,13 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    psql_client_cert: "test cert contents"
+    psql_client_key: "test key contents"
+    psql_ca_cert: "test ca contents"
+    common_web_user: "root"
+    common_web_group: "root"
+  tasks:
+    - name: "Include psql_init"
+      include_role:
+        name: "psql_init"

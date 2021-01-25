@@ -1,0 +1,12 @@
+---
+
+- name: Copy TLS certificates
+  copy: >
+    content="{{ item.content }}" dest="{{ item.dest }}"
+    owner="{{ psql_cert_owner }}" group="{{ psql_cert_group }}" mode=0444
+  with_items:
+    - { content: "{{ psql_client_cert }}", dest: "{{ psql_client_cert_path }}" }
+    - { content: "{{ psql_client_key  }}", dest: "{{ psql_client_key_path }}" }
+    - { content: "{{ psql_ca_cert }}", dest: "{{ psql_ca_cert_path }}" }
+  when: psql_client_cert != '' and psql_client_key != '' and psql_ca_cert != ''
+  tags: ['psql', 'psql:tls']

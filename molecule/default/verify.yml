@@ -1,0 +1,49 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Check that the cert files exist
+    stat:
+      path: /etc/ssl/certs/psql-client-cert.pem
+    register: stat_result
+  - name: read the cert file
+    shell: cat /etc/ssl/certs/psql-client-cert.pem
+    register: file_content
+  - assert:
+      that:
+        - stat_result.stat.exists
+        - stat_result.stat.gr_name == "root"
+        - stat_result.stat.pw_name == "root"
+        - stat_result.stat.mode == "0444"
+        - file_content.stdout == "test cert contents"
+  - name: Check that the key files exist
+    stat:
+      path: /etc/ssl/certs/psql-client-key.pem
+    register: stat_result
+  - name: read the key file
+    shell: cat /etc/ssl/certs/psql-client-key.pem
+    register: file_content
+  - assert:
+      that:
+        - stat_result.stat.exists
+        - stat_result.stat.gr_name == "root"
+        - stat_result.stat.pw_name == "root"
+        - stat_result.stat.mode == "0444"
+        - file_content.stdout == "test key contents"
+  - name: Check that the ca files exist
+    stat:
+      path: /etc/ssl/certs/psql-server-ca.pem
+    register: stat_result
+  - name: read the ca file
+    shell: cat /etc/ssl/certs/psql-server-ca.pem
+    register: file_content
+  - assert:
+      that:
+        - stat_result.stat.exists
+        - stat_result.stat.gr_name == "root"
+        - stat_result.stat.pw_name == "root"
+        - stat_result.stat.mode == "0444"
+        - file_content.stdout == "test ca contents"

@@ -1,0 +1,10 @@
+---
+
+psql_client_cert: ''
+psql_client_key: ''
+psql_ca_cert: ''
+psql_client_cert_path: '/etc/ssl/certs/psql-client-cert.pem'
+psql_client_key_path: '/etc/ssl/certs/psql-client-key.pem'
+psql_ca_cert_path: '/etc/ssl/certs/psql-server-ca.pem'
+psql_cert_owner: "{{ common_web_user }}"
+psql_cert_group: "{{ common_web_user }}"
