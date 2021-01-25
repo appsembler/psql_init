@@ -4,12 +4,11 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: certagent-instance
+  - name: psql-init-instance-1604
     image: geerlingguy/docker-ubuntu1604-ansible
-#    command: /sbin/init
-#    volumes:
-#      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-#    privileged: true
+    pre_build_image: true
+  - name: psql-init-instance-2004
+    image: geerlingguy/docker-ubuntu2004-ansible
     pre_build_image: true
 provisioner:
   name: ansible
