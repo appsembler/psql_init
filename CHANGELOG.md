@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.1.0] - 2021-01-26
 ### Changed
 - more restrictive permissions (no reason for ssl certs to be world readable)
 
@@ -13,5 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - initial version.
 
-[Unreleased]: https://github.com/appsembler/psql_init/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/appsembler/psql_init/compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/appsembler/psql_init/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/appsembler/psql_init/releases/tag/v1.0.0
