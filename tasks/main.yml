@@ -3,7 +3,7 @@
 - name: Copy TLS certificates
   copy: >
     content="{{ item.content }}" dest="{{ item.dest }}"
-    owner="{{ psql_cert_owner }}" group="{{ psql_cert_group }}" mode=0444
+    owner="{{ psql_cert_owner }}" group="{{ psql_cert_group }}" mode=0400
   with_items:
     - { content: "{{ psql_client_cert }}", dest: "{{ psql_client_cert_path }}" }
     - { content: "{{ psql_client_key  }}", dest: "{{ psql_client_key_path }}" }

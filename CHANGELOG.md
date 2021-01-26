@@ -6,9 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
 ### Changed
-### Removed
+- more restrictive permissions (no reason for ssl certs to be world readable)
 
 ## [v1.0.0] - 2021-01-25
 ### Added

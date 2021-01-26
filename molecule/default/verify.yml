@@ -17,7 +17,7 @@
         - stat_result.stat.exists
         - stat_result.stat.gr_name == "root"
         - stat_result.stat.pw_name == "root"
-        - stat_result.stat.mode == "0444"
+        - stat_result.stat.mode == "0400"
         - file_content.stdout == "test cert contents"
   - name: Check that the key files exist
     stat:
@@ -31,7 +31,7 @@
         - stat_result.stat.exists
         - stat_result.stat.gr_name == "root"
         - stat_result.stat.pw_name == "root"
-        - stat_result.stat.mode == "0444"
+        - stat_result.stat.mode == "0400"
         - file_content.stdout == "test key contents"
   - name: Check that the ca files exist
     stat:
@@ -45,5 +45,5 @@
         - stat_result.stat.exists
         - stat_result.stat.gr_name == "root"
         - stat_result.stat.pw_name == "root"
-        - stat_result.stat.mode == "0444"
+        - stat_result.stat.mode == "0400"
         - file_content.stdout == "test ca contents"
